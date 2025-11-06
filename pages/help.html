@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מרכז עזרה - Elementrix</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/info-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="help-container">
+        <a href="store.html" class="back-btn">
+            <i class="fas fa-arrow-right"></i>
+            חזרה לחנות
+        </a>
+
+        <div class="help-header">
+            <h1><i class="fas fa-question-circle"></i> מרכז עזרה</h1>
+            <p>כאן תמצאו תשובות לשאלות הנפוצות</p>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>איך אני קונה רכיב?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>כדי לרכוש רכיב, לחצו על הרכיב המבוקש, ולחצו על כפתור "רכוש עכשיו". המערכת תנכה את הנקודות שלכם ותעניק לכם גישה לקוד המלא.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>איך אני מקבל נקודות?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>ניתן לקבל נקודות בשתי דרכים:<br>
+                    1. העלאת רכיב חדש - קבלו 100 נקודות לאחר אישור<br>
+                    2. רכישת נקודות בכסף דרך עמוד הפרופיל</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>איך אני מעלה רכיב?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>לחצו על "העלאת רכיב" בתפריט העליון, מלאו את הפרטים (שם, קטגוריה, קוד HTML/CSS/JS), והעלו תמונת תצוגה. הרכיב יאושר על ידי מנהל לפני הפרסום.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>מה קורה אחרי שקניתי רכיב?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>לאחר רכישת רכיב, תקבלו גישה מלאה לקוד המקור (HTML, CSS, JavaScript). תוכלו להעתיק את הקוד ולהשתמש בו בפרויקטים שלכם.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>איך אני יכול ליצור קשר?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>ניתן ליצור קשר דרך עמוד "צור קשר" בתחתית האתר, או לשלוח מייל ל-support@elementrix.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

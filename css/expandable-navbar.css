@@ -1,0 +1,500 @@
+/* ========================================
+   🎯 EXPANDABLE NAVBAR - Smart & Clean 🎯
+   Search Button Expands on Click
+   ======================================== */
+
+/* === NAVBAR === */
+.navbar {
+    background: white;
+    padding: 2.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow-x: hidden;
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, transparent 5%, #C8102E 50%, transparent 95%);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    overflow: visible;
+    position: relative;
+}
+
+/* === LOGO - Colorful & Animated === */
+.mega-logo {
+    display: inline-block !important;
+    text-decoration: none;
+    padding: 0 !important;
+    margin: 0;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.mega-logo::before {
+    display: none !important;
+}
+
+.mega-logo:hover {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    display: block;
+    
+    /* Animated gradient text - Red to Gold */
+    background: linear-gradient(
+        90deg,
+        #C8102E 0%,
+        #ff6b35 25%,
+        #D4AF37 50%,
+        #ff6b35 75%,
+        #C8102E 100%
+    ) !important;
+    background-size: 300% 100% !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: logoColorFlow 3s linear infinite;
+}
+
+@keyframes logoColorFlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+.mega-logo:hover .logo-text {
+    animation: logoColorFlow 1.5s linear infinite;
+}
+
+.logo-icon {
+    display: none !important;
+}
+
+/* === EXPANDABLE SEARCH === */
+.premium-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+/* Search Button - Clean & Elegant */
+.search-toggle-btn {
+    width: 62px;
+    height: 62px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+    border-bottom: 3px solid rgba(200, 16, 46, 0.2);
+    padding-bottom: 4px;
+}
+
+.search-toggle-btn:hover {
+    color: #C8102E;
+    border-bottom-color: rgba(200, 16, 46, 0.6);
+}
+
+.search-toggle-btn.active {
+    color: #C8102E;
+    border-bottom-color: rgba(212, 175, 55, 0.7);
+}
+
+.search-toggle-btn i {
+    font-size: 1.5rem;
+}
+
+/* Search Input (slides from button - RIGHT TO LEFT) */
+.search-input-container {
+    position: absolute;
+    right: 70px;
+    top: 0;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+.search-input-container.active {
+    width: 300px;
+    opacity: 1;
+}
+
+.search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 3px solid #e5e5e5;
+    border-radius: 0;
+    background: transparent;
+    font-family: inherit;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-bottom-color: #D4AF37;
+    background: transparent;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-icon-wrapper {
+    display: none;
+}
+
+/* === CENTER SECTION - Crazy & Beautiful === */
+.center-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    grid-column: 2;
+}
+
+/* === NAV ACTIONS === */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    grid-column: 3;
+}
+
+/* === POINTS - Harmonized === */
+.premium-points {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.3rem 2.8rem;
+    background: linear-gradient(135deg, #FFFBF0 0%, #FFF8E6 100%);
+    border-radius: 50px;
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 
+        0 4px 12px rgba(212, 175, 55, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s;
+    height: 62px;
+}
+
+.premium-points:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 16px rgba(212, 175, 55, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    border-color: rgba(212, 175, 55, 0.7);
+}
+
+.points-icon-wrapper {
+    display: flex !important;
+    align-items: center;
+    position: relative;
+}
+
+.points-icon-wrapper i {
+    font-size: 1.6rem;
+    color: #D4AF37;
+    filter: drop-shadow(0 1px 2px rgba(212, 175, 55, 0.3));
+    animation: coinSpin 3s ease-in-out infinite;
+}
+
+@keyframes coinSpin {
+    0%, 100% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg); }
+}
+
+.coins-particles,
+.points-tooltip {
+    display: none;
+}
+
+.points-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: flex-start;
+}
+
+.points-available {
+    font-size: 1.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #D4AF37, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.points-label {
+    font-size: 0.9rem;
+    color: #B8941F;
+    font-weight: 600;
+}
+
+/* === UPLOAD BUTTON - Harmonized === */
+.btn-success.premium-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.3rem 2.8rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 50px;
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 
+        0 4px 12px rgba(16, 185, 129, 0.25),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    height: 62px;
+}
+
+.btn-success.premium-btn:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    box-shadow: 
+        0 6px 16px rgba(16, 185, 129, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-success.premium-btn .btn-icon-wrap {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.btn-success.premium-btn:hover .btn-icon-wrap {
+    transform: translateX(-3px);
+}
+
+.btn-success.premium-btn:active {
+    transform: none;
+}
+
+.btn-success.premium-btn:active .btn-icon-wrap {
+    animation: iconBounce 0.4s ease-in-out;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateX(-3px) translateY(0) scale(1); }
+    25% { transform: translateX(-3px) translateY(-8px) scale(1.2); }
+    50% { transform: translateX(-3px) translateY(0) scale(1); }
+    75% { transform: translateX(-3px) translateY(-4px) scale(1.1); }
+}
+
+.btn-success.premium-btn .btn-icon-wrap i {
+    font-size: 1.3rem;
+}
+
+/* === PROFILE & LOGOUT BUTTONS - Clean & Elegant === */
+.btn-primary.premium-btn,
+.premium-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    padding: 0;
+    padding-bottom: 4px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    border-bottom: 3px solid rgba(200, 16, 46, 0.2);
+}
+
+/* Back to Store Button - Text Version */
+.btn-primary.premium-btn .btn-text {
+    display: inline;
+    white-space: nowrap;
+}
+
+.btn-success.premium-btn .btn-text {
+    white-space: nowrap;
+}
+
+.btn-primary.premium-btn:not(.premium-icon-btn) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    height: 62px;
+    padding: 0 2.5rem;
+    border-radius: 50px;
+    border: 2px solid rgba(200, 16, 46, 0.3);
+    border-bottom: 2px solid rgba(200, 16, 46, 0.3);
+    gap: 0.8rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #C8102E 0%, #a51028 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+}
+
+.btn-primary.premium-btn:not(.premium-icon-btn):hover {
+    background: linear-gradient(135deg, #a51028 0%, #8B0A1F 100%);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 6px 16px rgba(200, 16, 46, 0.4);
+}
+
+.btn-primary.premium-btn .btn-icon-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.btn-primary.premium-btn .btn-icon-wrap i {
+    font-size: 1.3rem;
+}
+
+.btn-primary.premium-btn:hover,
+.premium-icon-btn:hover {
+    color: #C8102E;
+    border-bottom-color: rgba(200, 16, 46, 0.6);
+}
+
+.premium-icon-btn i {
+    font-size: 1.5rem;
+}
+
+.icon-pulse {
+    display: none;
+}
+
+.btn-icon-wrap i {
+    font-size: 1.1rem;
+}
+
+.btn-text {
+    font-size: 0.95rem;
+}
+
+.btn-ripple {
+    display: none;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.7rem;
+    }
+    
+    .search-input-container {
+        height: 44px;
+    }
+    
+    .search-input-container.active {
+        width: 200px;
+    }
+    
+    .search-toggle-btn,
+    .premium-icon-btn {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .search-toggle-btn i,
+    .premium-icon-btn i {
+        font-size: 1.25rem;
+    }
+    
+    .nav-actions {
+        gap: 0.75rem;
+    }
+    
+    .points-label {
+        display: none;
+    }
+    
+    .premium-points {
+        padding: 0.6rem 1.1rem;
+    }
+    
+    .btn-text {
+        display: none;
+    }
+    
+    .btn-success.premium-btn {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1.2rem;
+    }
+    
+    .search-input-container.active {
+        width: 200px;
+    }
+    
+    .premium-points {
+        padding: 0.55rem 0.95rem;
+    }
+    
+    .points-icon-wrapper i {
+        font-size: 1.05rem;
+    }
+    
+    .points-available {
+        font-size: 1.1rem;
+    }
+}

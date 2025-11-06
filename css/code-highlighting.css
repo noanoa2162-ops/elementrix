@@ -1,0 +1,106 @@
+/* Beautiful Code Container */
+.code-container-wrapper {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 16px;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.05),
+        0 1px 2px rgba(0, 0, 0, 0.03);
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.2s ease;
+    position: relative;
+    font-family: 'Roboto Mono', 'Consolas', monospace;
+}
+
+.code-container-wrapper:hover {
+    border-color: #bdbdbd;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Syntax Highlighting Colors */
+.code-container-wrapper pre {
+    color: #37474f;
+}
+
+/* Tags */
+.code-container-wrapper pre .token.tag,
+.code-container-wrapper pre .token.selector {
+    color: #e91e63;
+}
+
+/* Attributes */
+.code-container-wrapper pre .token.attr-name {
+    color: #9c27b0;
+}
+
+/* Strings */
+.code-container-wrapper pre .token.string,
+.code-container-wrapper pre .token.attr-value {
+    color: #4caf50;
+}
+
+/* Comments */
+.code-container-wrapper pre .token.comment {
+    color: #9e9e9e;
+    font-style: italic;
+}
+
+/* Punctuation */
+.code-container-wrapper pre .token.punctuation {
+    color: #607d8b;
+}
+
+/* Properties (CSS) */
+.code-container-wrapper pre .token.property {
+    color: #2196f3;
+}
+
+/* Functions */
+.code-container-wrapper pre .token.function {
+    color: #ff9800;
+}
+
+/* Keywords */
+.code-container-wrapper pre .token.keyword {
+    color: #9c27b0;
+    font-weight: 500;
+}
+
+/* Numbers */
+.code-container-wrapper pre .token.number {
+    color: #f44336;
+}
+
+/* Custom Scrollbar */
+.code-container-wrapper::-webkit-scrollbar {
+    width: 10px;
+}
+
+.code-container-wrapper::-webkit-scrollbar-track {
+    background: #f9fafb;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+.code-container-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #D4AF37 0%, #C8102E 100%);
+    border-radius: 10px;
+    border: 2px solid #f9fafb;
+}
+
+.code-container-wrapper::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #C8102E 0%, #D4AF37 100%);
+    border-color: #f3f4f6;
+}
+
+/* Firefox Scrollbar */
+.code-container-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #D4AF37 #f9fafb;
+}

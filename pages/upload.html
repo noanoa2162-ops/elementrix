@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>העלאת רכיב חדש - Elementrix</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/upload-style.css">
+    <link rel="stylesheet" href="../css/expandable-navbar.css">
+    <link rel="stylesheet" href="../css/store-premium.css">
+    <link rel="stylesheet" href="../css/advanced-effects.css">
+    <link rel="stylesheet" href="../css/no-loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 🌟 Loading Screen -->
+    <div class="elementrix-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">Elementrix</div>
+            <div class="loader-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="loader-text">מכין את הטופס...</div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="store.html" class="logo mega-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Elementrix</span>
+            </a>
+            <div class="nav-actions premium-actions">
+                <button class="btn btn-primary premium-btn" id="backBtn">
+                    <span class="btn-icon-wrap"><i class="fas fa-arrow-right"></i></span>
+                    <span class="btn-text">חזור לחנות</span>
+                    <div class="btn-ripple"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="upload-container">
+            <div class="upload-header">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h1>העלה רכיב חדש</h1>
+                <p class="subtitle" id="uploadSubtitle">שתף את היצירה שלך עם הקהילה!</p>
+            </div>
+            
+            <form id="uploadForm" class="upload-form">
+                <div class="form-group">
+                    <label for="componentName"><i class="fas fa-tag"></i> שם הרכיב</label>
+                    <input type="text" id="componentName" name="name" required placeholder="לדוגמה: כפתור אנימציה מתקדם">
+                    <span class="error-msg" id="componentNameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="componentCategory"><i class="fas fa-folder"></i> קטגוריה</label>
+                    <select id="componentCategory" name="category" required>
+                        <option value="">בחר קטגוריה</option>
+                        <option value="buttons">כפתורים</option>
+                        <option value="forms">טפסים</option>
+                        <option value="cards">כרטיסים</option>
+                        <option value="animations">אנימציות</option>
+                        <option value="menus">תפריטים</option>
+                        <option value="other">אחר</option>
+                    </select>
+                    <span class="error-msg" id="componentCategoryError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="componentDescription"><i class="fas fa-align-right"></i> תיאור</label>
+                    <textarea id="componentDescription" name="description" rows="3" required placeholder="תאר את הרכיב שלך - מה הוא עושה ומדוע הוא שימושי..."></textarea>
+                    <span class="error-msg" id="componentDescriptionError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="componentImage"><i class="fas fa-image"></i> תמונת תצוגה</label>
+                    <input type="file" id="componentImage" name="image" accept="image/*" required>
+                    <span class="hint">העלה תמונה (JPG, PNG, GIF)</span>
+                    <span class="error-msg" id="componentImageError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="componentPrice"><i class="fas fa-coins"></i> מחיר (בנקודות)</label>
+                    <input type="number" id="componentPrice" name="price" min="10" max="500" required placeholder="100">
+                    <span class="hint">בין 10 ל-500 נקודות</span>
+                    <span class="error-msg" id="componentPriceError"></span>
+                </div>
+                
+                <div class="form-group code-input-group">
+                    <label for="componentHTML"><i class="fab fa-html5"></i> קוד HTML</label>
+                    <textarea id="componentHTML" name="html" rows="6" required placeholder="<button class='my-button'>לחץ כאן</button>"></textarea>
+                    <span class="error-msg" id="componentHTMLError"></span>
+                </div>
+                
+                <div class="form-group code-input-group">
+                    <label for="componentCSS"><i class="fab fa-css3-alt"></i> קוד CSS</label>
+                    <textarea id="componentCSS" name="css" rows="6" required placeholder=".my-button { background: red; padding: 10px; }"></textarea>
+                    <span class="error-msg" id="componentCSSError"></span>
+                </div>
+                
+                <div class="form-group code-input-group">
+                    <label for="componentJS"><i class="fab fa-js-square"></i> קוד JavaScript (אופציונלי)</label>
+                    <textarea id="componentJS" name="js" rows="6" placeholder="document.querySelector('.my-button').addEventListener('click', ...)"></textarea>
+                    <span class="error-msg" id="componentJSError"></span>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> שלח לאישור מנהל
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../js/types.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/modals.js"></script>
+    <script src="../js/upload.js"></script>
+    <script src="../js/premium-effects.js"></script>
+    <script src="../js/advanced-effects.js"></script>
+    <script src="../js/performance-monitor.js"></script>
+    <script src="../js/expandable-search.js"></script>
+    <script src="../js/back-to-top.js"></script>
+</body>
+</html>

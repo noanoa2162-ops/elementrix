@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementrix - גלה רכיבי קוד מקצועיים</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components-grid.css">
+    <link rel="stylesheet" href="../css/modals.css">
+    <link rel="stylesheet" href="../css/expandable-navbar.css">
+    <link rel="stylesheet" href="../css/store-premium.css">
+    <link rel="stylesheet" href="../css/mega-hero.css">
+    <link rel="stylesheet" href="../css/advanced-effects.css">
+    <link rel="stylesheet" href="../css/no-loader.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="../index.html" class="logo mega-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Elementrix</span>
+            </a>
+            
+            <!-- 🎯 CENTER SECTION - Points & Upload 🎯 -->
+            <div class="center-actions">
+                <!-- Points Display with Animation -->
+                <div class="points-display premium-points hidden" id="pointsDisplay">
+                    <div class="points-icon-wrapper">
+                        <i class="fas fa-coins"></i>
+                        <div class="coins-particles"></div>
+                    </div>
+                    <div class="points-info">
+                        <span class="points-available" id="pointsAvailable">0</span>
+                        <span class="points-label">נקודות</span>
+                    </div>
+                    <div class="points-tooltip">הנקודות שלך 💰</div>
+                </div>
+                
+                <!-- Upload Button -->
+                <button class="btn btn-success premium-btn" id="uploadBtn">
+                    <span class="btn-icon-wrap"><i class="fas fa-upload"></i></span>
+                    <span class="btn-text">העלה רכיב</span>
+                    <div class="btn-ripple"></div>
+                </button>
+                
+                <!-- Admin Button -->
+                <button class="btn btn-primary premium-btn hidden" id="adminBtn">
+                    <span class="btn-icon-wrap"><i class="fas fa-shield-alt"></i></span>
+                    <span class="btn-text">ניהול</span>
+                    <div class="btn-ripple"></div>
+                </button>
+            </div>
+            
+            <!-- 🎯 RIGHT ACTIONS 🎯 -->
+            <div class="nav-actions premium-actions">
+                <!-- Profile Button -->
+                <button class="btn btn-icon premium-icon-btn premium-tooltip hidden" id="profileBtn" data-tooltip="הפרופיל שלי">
+                    <i class="fas fa-user"></i>
+                    <div class="icon-pulse"></div>
+                </button>
+                
+                <!-- Logout Button -->
+                <button class="btn btn-icon premium-icon-btn premium-tooltip" id="logoutBtn" data-tooltip="התנתקות">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <div class="icon-pulse"></div>
+                </button>
+                
+                <!-- Search -->
+                <div class="premium-search">
+                    <!-- Search Toggle Button -->
+                    <button class="search-toggle-btn premium-tooltip" id="searchToggleBtn" data-tooltip="חיפוש">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Search Input Container -->
+                    <div class="search-input-container">
+                        <div class="search-icon-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
+                        <input type="search" id="searchInput" placeholder="חיפוש רכיבים..." class="search-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- 🔥💎 MEGA HERO SECTION - WORLD CLASS 💎🔥 -->
+        <div class="mega-hero" id="megaHero">
+            <!-- Interactive Background -->
+            <canvas id="heroCanvas" class="hero-canvas"></canvas>
+            <div class="hero-bg-gradient animated-mesh"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+            <div class="hero-rays"></div>
+            
+            <div class="hero-container">
+                <!-- Main Content -->
+                <div class="hero-main">
+                    <div class="hero-label">
+                        <span class="label-icon">⚡</span>
+                        <span>שוק רכיבי הקוד שלך</span>
+                        <span class="label-badge">60+ רכיבים</span>
+                    </div>
+                    
+                    <h1 class="hero-mega-title">
+                        <span class="title-line-1">
+                            <span class="typing-text" id="typingText">רכיבי קוד מוכנים</span>
+                            <span class="typing-cursor">|</span>
+                        </span>
+                        <span class="title-line-2">
+                            <span class="gradient-animated explosive-text">למפתחים</span>
+                            <span class="underline-animated glitch-text">מקצוענים</span>
+                        </span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        אלפי מפתחים כבר חוסכים שעות עבודה עם רכיבי הקוד שלנו.<br>
+                        <strong>קוד נקי, מהיר וresponisve</strong> - מוכן להעתקה בקליק אחד.
+                    </p>
+                    
+                    <!-- Stats Mini -->
+                    <div class="hero-stats-mini">
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">60+</div>
+                            <div class="stat-mini-label">רכיבים</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">500+</div>
+                            <div class="stat-mini-label">משתמשים</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">4.5★</div>
+                            <div class="stat-mini-label">דירוג ממוצע</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Actions -->
+                    <div class="hero-cta">
+                        <button class="cta-primary" id="exploreBtn">
+                            <span class="cta-text">חקור רכיבים</span>
+                            <span class="cta-icon">→</span>
+                            <div class="cta-glow"></div>
+                        </button>
+                    </div>
+                    
+                    <!-- Trust Badges -->
+                    <div class="hero-trust">
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt"></i> קוד מאומת
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-bolt"></i> עדכונים שבועיים
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-heart"></i> תמיכה 24/7
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visual Side -->
+                <div class="hero-visual">
+                    <div class="visual-wrapper">
+                        <!-- 3D Rotating Cards -->
+                        <div class="cards-3d-container">
+                            <div class="card-3d card-3d-1" data-tilt>
+                                <div class="card-3d-inner">
+                                    <div class="card-3d-shine"></div>
+                                    <i class="fas fa-code"></i>
+                                    <h3>HTML/CSS</h3>
+                                    <p>156+ רכיבים</p>
+                                </div>
+                            </div>
+                            <div class="card-3d card-3d-2" data-tilt>
+                                <div class="card-3d-inner">
+                                    <div class="card-3d-shine"></div>
+                                    <i class="fas fa-palette"></i>
+                                    <h3>עיצובים</h3>
+                                    <p>מקוריים</p>
+                                </div>
+                            </div>
+                            <div class="card-3d card-3d-3" data-tilt>
+                                <div class="card-3d-inner">
+                                    <div class="card-3d-shine"></div>
+                                    <i class="fas fa-rocket"></i>
+                                    <h3>מהיר</h3>
+                                    <p>תוך שניות</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="float-element element-1">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="float-element element-2">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="float-element element-3">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Separator Wave -->
+        <div class="hero-separator">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+            </svg>
+        </div>
+
+        <!-- Stats removed - included in MEGA HERO -->
+
+        <!-- 🎨 Premium Filters -->
+        <div class="filters-container">
+            <div class="filters-header">
+                <h3><i class="fas fa-filter"></i> סינון וחיפוש</h3>
+                <button class="btn btn-sm btn-ghost" id="resetFilters">
+                    <i class="fas fa-redo"></i> אפס הכל
+                </button>
+            </div>
+            <div class="filters-bar-premium">
+                <div class="filter-group-premium">
+                    <label for="categoryFilter">
+                        <i class="fas fa-folder-open"></i> קטגוריה
+                    </label>
+                    <select id="categoryFilter" class="select-premium">
+                        <option value="">🌟 הכל</option>
+                        <option value="buttons">🔘 כפתורים</option>
+                        <option value="forms">📝 טפסים</option>
+                        <option value="cards">🎴 כרטיסים</option>
+                        <option value="animations">✨ אנימציות</option>
+                        <option value="menus">🍔 תפריטים</option>
+                        <option value="other">📦 אחר</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group-premium">
+                    <label for="sortFilter">
+                        <i class="fas fa-sort-amount-down"></i> מיון
+                    </label>
+                    <select id="sortFilter" class="select-premium">
+                        <option value="newest">🆕 הכי חדשים</option>
+                        <option value="popular">🔥 הכי פופולריים</option>
+                        <option value="rated">⭐ הכי מדורגים</option>
+                        <option value="cheapest">💰 הכי זולים</option>
+                    </select>
+                </div>
+
+                <div class="filter-group-premium">
+                    <label for="priceFilter">
+                        <i class="fas fa-dollar-sign"></i> מחיר מקס׳
+                    </label>
+                    <input type="range" id="priceFilter" class="range-premium" min="0" max="500" value="500">
+                    <span class="range-value" id="priceValue">500</span>
+                    <span style="font-size: 0.85rem; color: #64748b; margin-right: 0.5rem;">נקודות</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="components-grid" id="componentsGrid">
+            <!-- Components will be dynamically added here -->
+        </div>
+
+        <div class="empty-state hidden" id="emptyState">
+            <i class="fas fa-search"></i>
+            <h3>לא נמצאו רכיבים</h3>
+            <p>נסה לשנות את החיפוש או הסינון</p>
+        </div>
+    </main>
+
+    <div class="modal hidden" id="componentModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Component details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="purchaseModal">
+        <div class="modal-content">
+            <button class="modal-close" id="purchaseModalClose">×</button>
+            <div class="modal-body">
+                <h2>רכישת נקודות</h2>
+                <form id="purchasePointsForm">
+                    <div class="packages">
+                        <label class="package-option">
+                            <input type="radio" name="package" value="100">
+                            <div class="package-card">
+                                <div class="package-points">100 נקודות</div>
+                                <div class="package-price">10₪</div>
+                            </div>
+                        </label>
+                        
+                        <label class="package-option">
+                            <input type="radio" name="package" value="500">
+                            <div class="package-card popular">
+                                <div class="badge">פופולרי</div>
+                                <div class="package-points">500 נקודות</div>
+                                <div class="package-price">40₪</div>
+                                <div class="package-save">חיסכון של 10₪</div>
+                            </div>
+                        </label>
+                        
+                        <label class="package-option">
+                            <input type="radio" name="package" value="1000">
+                            <div class="package-card">
+                                <div class="package-points">1000 נקודות</div>
+                                <div class="package-price">70₪</div>
+                                <div class="package-save">חיסכון של 30₪</div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">מספר כרטיס</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="0000-0000-0000-0000" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">תוקף</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardHolder">שם בעל הכרטיס</label>
+                        <input type="text" id="cardHolder" name="cardHolder" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">אשר תשלום</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <!-- 🎨 FOOTER -->
+    <footer class="premium-footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3><i class="fas fa-code"></i> Elementrix</h3>
+                    <p>חנות רכיבי קוד מקצועית<br>לפיתוח מהיר ויעיל</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>קישורים מהירים</h4>
+                    <ul>
+                        <li><a href="store.html"><i class="fas fa-store"></i> חנות</a></li>
+                        <li><a href="upload.html"><i class="fas fa-upload"></i> העלאת רכיב</a></li>
+                        <li><a href="profile.html"><i class="fas fa-user"></i> הפרופיל שלי</a></li>
+                        <li><a href="../index.html"><i class="fas fa-home"></i> דף הבית</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>תמיכה</h4>
+                    <ul>
+                        <li><a href="help.html"><i class="fas fa-question-circle"></i> מרכז עזרה</a></li>
+                        <li><a href="terms.html"><i class="fas fa-file-contract"></i> תנאי שימוש</a></li>
+                        <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> מדיניות פרטיות</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> צור קשר</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>הישארו מעודכנים</h4>
+                    <p>הצטרפו לניוזלטר שלנו</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="your@email.com" aria-label="אימייל">
+                        <button type="button">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>שלח</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Elementrix - חנות רכיבי קוד. כל הזכויות שמורות.</p>
+                <p class="footer-made-with">
+                    נבנה עם <i class="fas fa-heart" style="color: #C8102E;"></i> בישראל
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/types.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/modals.js"></script>
+    <script src="../js/purchase.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/store-interactions.js"></script>
+    <script src="../js/performance-monitor.js"></script>
+    <script src="../js/advanced-effects.js"></script>
+    <script src="../js/expandable-search.js"></script>
+    <script src="../js/back-to-top.js"></script>
+    <script src="../js/footer.js"></script>
+</body>
+</html>

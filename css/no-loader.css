@@ -1,0 +1,10 @@
+/* 🚫 DISABLE ALL LOADERS 🚫 */
+.elementrix-loader,
+#pageLoader,
+[class*="loader"],
+[id*="loader"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}

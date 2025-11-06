@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ממשק מנהל - Elementrix</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/advanced-effects.css">
+    <link rel="stylesheet" href="../css/no-loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <nav class="navbar admin">
+        <div class="nav-container">
+            <div class="logo">Elementrix Admin</div>
+            <div class="nav-actions">
+                <button class="btn btn-secondary" id="backBtn"><i class="fas fa-arrow-right"></i> חזור לחנות</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1><i class="fas fa-cogs"></i> פאנל ניהול</h1>
+                <p>ניהול מרכזי של כל הרכיבים והמשתמשים במערכת</p>
+            </div>
+            
+            <div class="stats-overview">
+                <div class="stat-card users">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-value" id="totalUsers">0</div>
+                    <div class="stat-label">משתמשים</div>
+                </div>
+                <div class="stat-card components">
+                    <i class="fas fa-code"></i>
+                    <div class="stat-value" id="totalComponents">0</div>
+                    <div class="stat-label">רכיבים</div>
+                </div>
+                <div class="stat-card pending">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-value" id="pendingComponents">0</div>
+                    <div class="stat-label">ממתינים</div>
+                </div>
+                <div class="stat-card transactions">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="stat-value" id="totalTransactions">0</div>
+                    <div class="stat-label">עסקאות</div>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" id="pendingTab"><i class="fas fa-hourglass-half"></i> רכיבים ממתינים</button>
+                <button class="tab-btn" id="allComponentsTab"><i class="fas fa-th-large"></i> כל הרכיבים</button>
+                <button class="tab-btn" id="usersTab"><i class="fas fa-user-friends"></i> משתמשים</button>
+                <button class="tab-btn" id="activityTab"><i class="fas fa-history"></i> פעילות</button>
+            </div>
+
+            <div class="tab-content active" id="pendingContent">
+                <div class="pending-list" id="pendingList">
+                    <!-- Pending components for approval -->
+                </div>
+            </div>
+
+            <div class="tab-content hidden" id="allComponentsContent">
+                <div class="components-table" id="allComponentsTable">
+                    <!-- All components table -->
+                </div>
+            </div>
+
+            <div class="tab-content hidden" id="usersContent">
+                <div class="users-table" id="usersTable">
+                    <!-- Users table -->
+                </div>
+            </div>
+
+            <div class="tab-content hidden" id="activityContent">
+                <div class="activity-log" id="activityLog">
+                    <!-- Activity log -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal hidden" id="reviewModal">
+        <div class="modal-content large">
+            <button class="modal-close" id="reviewModalClose">×</button>
+            <div class="modal-body">
+                <h2>בדיקת רכיב</h2>
+                <div id="reviewContent">
+                    <!-- Component review details -->
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-success" id="approveBtn">אשר ✓</button>
+                    <button class="btn btn-danger" id="rejectBtn">דחה ✗</button>
+                </div>
+                <div class="form-group" id="rejectReasonGroup">
+                    <label for="rejectReason">סיבת דחייה</label>
+                    <textarea id="rejectReason" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../js/types.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/premium-effects.js"></script>
+    <script src="../js/advanced-effects.js"></script>
+    <script src="../js/performance-monitor.js"></script>
+    <script src="../js/back-to-top.js"></script>
+</body>
+</html>

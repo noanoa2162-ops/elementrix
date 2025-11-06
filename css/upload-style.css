@@ -1,0 +1,215 @@
+/* 🎨 Upload Page - Amazing Cloud Design - RED & WIDE! */
+
+body {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe8ec 100%);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.upload-container {
+    max-width: 700px;
+    margin: 100px auto 50px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 30px 80px rgba(200, 16, 46, 0.2);
+    padding: 60px 70px;
+    position: relative;
+    border: 3px solid rgba(200, 16, 46, 0.15);
+}
+
+.upload-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.upload-header i {
+    font-size: 120px;
+    color: #C8102E;
+    margin-bottom: 25px;
+    display: inline-block;
+    animation: floatCloud 3s ease-in-out infinite;
+    filter: drop-shadow(0 15px 30px rgba(200, 16, 46, 0.6));
+}
+
+@keyframes floatCloud {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+.upload-header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 20px 0 15px;
+}
+
+.upload-header .subtitle {
+    color: #7f8c8d;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group label i {
+    color: #C8102E;
+    font-size: 20px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    padding: 14px 18px;
+    border: 2px solid #e8ecf1;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #C8102E;
+    background: white;
+    box-shadow: 0 0 0 5px rgba(200, 16, 46, 0.15);
+}
+
+.form-group input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #e8ecf1;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #C8102E;
+    background: rgba(200, 16, 46, 0.05);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.code-input-group textarea {
+    font-family: 'Courier New', monospace;
+    background: #000000;
+    color: #00ff00;
+    border: none;
+    min-height: 140px;
+    font-size: 14px;
+}
+
+.code-input-group textarea::placeholder {
+    color: #00ff00;
+    opacity: 0.5;
+}
+
+.form-group .hint {
+    font-size: 13px;
+    color: #95a5a6;
+    margin-top: 6px;
+}
+
+.form-group .error-msg {
+    font-size: 13px;
+    color: #e74c3c;
+    margin-top: 6px;
+    display: none;
+}
+
+.form-group .error-msg:not(:empty) {
+    display: block;
+}
+
+.upload-form .btn {
+    padding: 18px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #a00000 0%, #7a0000 100%);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 15px 40px rgba(160, 0, 0, 0.6);
+}
+
+.upload-form .btn:hover {
+    box-shadow: 0 20px 50px rgba(160, 0, 0, 0.8);
+    background: linear-gradient(135deg, #b50000 0%, #a00000 100%);
+}
+
+.upload-form .btn:active {
+    background: linear-gradient(135deg, #900000 0%, #750000 100%);
+}
+
+.upload-form .btn i {
+    font-size: 22px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .upload-container {
+        margin: 60px 15px 30px;
+        padding: 50px 40px;
+        max-width: 95%;
+    }
+    
+    .upload-header i {
+        font-size: 90px;
+    }
+    
+    .upload-header h1 {
+        font-size: 28px;
+    }
+    
+    .upload-form .btn {
+        padding: 16px 35px;
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 769px) {
+    .upload-container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,197 @@
+/* ========================================
+   📄 INFO PAGES STYLES (Help, Contact, Terms, Privacy)
+   ======================================== */
+
+body {
+    background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Container */
+.help-container,
+.contact-container,
+.terms-container,
+.privacy-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Headers */
+.help-header h1,
+.contact-header h1,
+.terms-header h1,
+.privacy-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #C8102E 0%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.help-header p,
+.contact-header p {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+/* Terms & Privacy Content */
+.terms-content h2,
+.privacy-content h2 {
+    color: #C8102E;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.terms-content p,
+.privacy-content p {
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+.privacy-content ul {
+    margin: 15px 0;
+    padding-right: 20px;
+}
+
+.privacy-content li {
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 40px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background: #f8f9fa;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.faq-question:hover {
+    background: #e9ecef;
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 500px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.submit-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #C8102E 0%, #D4AF37 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: linear-gradient(90deg, #C8102E 0%, #D4AF37 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(200, 16, 46, 0.3);
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(200, 16, 46, 0.4);
+}
+
+.back-btn i {
+    transition: transform 0.3s;
+}
+
+.back-btn:hover i {
+    transform: translateX(3px);
+}

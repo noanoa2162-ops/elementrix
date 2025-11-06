@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פרטי רכיב - Elementrix</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components-grid.css">
+    <link rel="stylesheet" href="../css/modals.css">
+    <link rel="stylesheet" href="../css/expandable-navbar.css">
+    <link rel="stylesheet" href="../css/store-premium.css">
+    <link rel="stylesheet" href="../css/mega-hero.css">
+    <link rel="stylesheet" href="../css/no-loader.css">
+    <link rel="stylesheet" href="../css/component-details.css">
+    <link rel="stylesheet" href="../css/code-highlighting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="store.html" class="logo mega-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">Elementrix</span>
+            </a>
+            
+            <!-- Spacer -->
+            <div style="flex: 1;"></div>
+            
+            <!-- Premium Actions -->
+            <div class="nav-actions premium-actions">
+                <!-- Points Display -->
+                <div class="points-display premium-points" id="pointsDisplay">
+                    <div class="points-icon-wrapper">
+                        <i class="fas fa-coins"></i>
+                        <div class="coins-particles"></div>
+                    </div>
+                    <div class="points-info">
+                        <span class="points-available" id="userPointsDisplay">0</span>
+                        <span class="points-label">נקודות</span>
+                    </div>
+                </div>
+                
+                <!-- Back Button -->
+                <button class="btn btn-primary premium-btn" id="backToStoreBtn">
+                    <span class="btn-icon-wrap"><i class="fas fa-arrow-right"></i></span>
+                    <span class="btn-text">חזרה לחנות</span>
+                    <div class="btn-ripple"></div>
+                </button>
+                
+                <!-- Logout Button -->
+                <button class="btn btn-icon premium-icon-btn" id="logoutBtn" data-tooltip="התנתקות">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <div class="icon-pulse"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 120px;">
+        <div id="componentDetails"></div>
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal hidden" id="purchaseModal">
+        <div class="modal-content large">
+            <button class="modal-close" id="purchaseModalClose">×</button>
+            <div class="modal-body">
+                <h2>רכישת נקודות</h2>
+                <form id="purchasePointsForm">
+                    <div class="packages">
+                        <label class="package-option">
+                            <input type="radio" name="package" value="100">
+                            <div class="package-card">
+                                <div class="package-points">100 נקודות</div>
+                                <div class="package-price">10₪</div>
+                            </div>
+                        </label>
+                        
+                        <label class="package-option">
+                            <input type="radio" name="package" value="500">
+                            <div class="package-card popular">
+                                <div class="badge">פופולרי</div>
+                                <div class="package-points">500 נקודות</div>
+                                <div class="package-price">40₪</div>
+                                <div class="package-save">חיסכון של 10₪</div>
+                            </div>
+                        </label>
+                        
+                        <label class="package-option">
+                            <input type="radio" name="package" value="1000">
+                            <div class="package-card">
+                                <div class="package-points">1000 נקודות</div>
+                                <div class="package-price">70₪</div>
+                                <div class="package-save">חיסכון של 30₪</div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">מספר כרטיס</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="0000-0000-0000-0000" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">תוקף</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardHolder">שם בעל הכרטיס</label>
+                        <input type="text" id="cardHolder" name="cardHolder" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">אשר תשלום</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    
+    <script src="../js/types.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/modals.js"></script>
+    <script src="../js/purchase.js"></script>
+    <script src="../js/load-components.js"></script>
+    <script src="../js/component-details.js"></script>
+    <script src="../js/advanced-effects.js"></script>
+    <script src="../js/expandable-search.js"></script>
+</body>
+</html>

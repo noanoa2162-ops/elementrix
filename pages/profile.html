@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הפרופיל שלי - נהל את הרכיבים שלך</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/advanced-effects.css">
+    <link rel="stylesheet" href="../css/no-loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="store.html" class="logo">Elementrix</a>
+            <div class="nav-actions">
+                <button class="btn btn-secondary" id="backBtn"><i class="fas fa-arrow-right"></i> חזור לחנות</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div>
+                        <h1 id="profileUsername">שם משתמש</h1>
+                        <p id="profileEmail"><i class="fas fa-envelope"></i> email@example.com</p>
+                    </div>
+                </div>
+                
+                <div class="points-summary">
+                    <div class="points-box available">
+                        <i class="fas fa-coins"></i>
+                        <div class="points-value" id="availablePoints">0</div>
+                        <div class="points-label">זמינות</div>
+                    </div>
+                    <div class="points-box pending">
+                        <i class="fas fa-clock"></i>
+                        <div class="points-value" id="pendingPoints">0</div>
+                        <div class="points-label">ממתינות</div>
+                    </div>
+                    <div class="points-box total">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="points-value" id="totalPoints">0</div>
+                        <div class="points-label">סה"כ</div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-success" id="buyPointsBtn"><i class="fas fa-shopping-cart"></i> רכוש נקודות</button>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" id="myComponentsTab"><i class="fas fa-code"></i> הרכיבים שלי</button>
+                <button class="tab-btn" id="purchasedTab"><i class="fas fa-shopping-bag"></i> רכיבים שרכשתי</button>
+                <button class="tab-btn" id="statsTab"><i class="fas fa-chart-bar"></i> סטטיסטיקות</button>
+            </div>
+
+            <div class="tab-content active" id="myComponentsContent">
+                <div class="components-list" id="myComponentsList">
+                    <!-- User's uploaded components -->
+                </div>
+            </div>
+
+            <div class="tab-content hidden" id="purchasedContent">
+                <div class="components-list" id="purchasedList">
+                    <!-- Purchased components -->
+                </div>
+            </div>
+
+            <div class="tab-content hidden" id="statsContent">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalEarned">0</div>
+                        <div class="stat-label">סך נקודות שצברתי</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalSpent">0</div>
+                        <div class="stat-label">סך נקודות שהוצאתי</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="componentsUploaded">0</div>
+                        <div class="stat-label">רכיבים שהעליתי</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="componentsPurchased">0</div>
+                        <div class="stat-label">רכיבים שרכשתי</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalRatings">0</div>
+                        <div class="stat-label">דירוגים שקיבלתי</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="avgRating">0</div>
+                        <div class="stat-label">דירוג ממוצע</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal hidden" id="purchaseModal">
+        <div class="modal-content">
+            <button class="modal-close" id="purchaseModalClose">×</button>
+            <div class="modal-body">
+                <h2>רכישת נקודות</h2>
+                <form id="purchasePointsForm">
+                    <div class="packages">
+                        <label class="package-option">
+                            <input type="radio" name="package" value="100">
+                            <div class="package-card">
+                                <div class="package-points">100 נקודות</div>
+                                <div class="package-price">10₪</div>
+                            </div>
+                        </label>
+                        
+                        <label class="package-option">
+                            <input type="radio" name="package" value="500">
+                            <div class="package-card popular">
+                                <div class="badge">פופולרי</div>
+                                <div class="package-points">500 נקודות</div>
+                                <div class="package-price">40₪</div>
+                                <div class="package-save">חיסכון של 10₪</div>
+                            </div>
+                        </label>
+                        
+                        <label class="package-option">
+                            <input type="radio" name="package" value="1000">
+                            <div class="package-card">
+                                <div class="package-points">1000 נקודות</div>
+                                <div class="package-price">70₪</div>
+                                <div class="package-save">חיסכון של 30₪</div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">מספר כרטיס</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="0000-0000-0000-0000" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">תוקף</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardHolder">שם בעל הכרטיס</label>
+                        <input type="text" id="cardHolder" name="cardHolder" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">אשר תשלום</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="codeModal">
+        <div class="modal-content large">
+            <button class="modal-close" id="codeModalClose">×</button>
+            <div class="modal-body">
+                <h2 id="codeModalTitle">קוד הרכיב</h2>
+                <div class="code-sections">
+                    <div class="code-section">
+                        <h3>HTML</h3>
+                        <pre id="codeHTML"></pre>
+                    </div>
+                    <div class="code-section">
+                        <h3>CSS</h3>
+                        <pre id="codeCSS"></pre>
+                    </div>
+                    <div class="code-section">
+                        <h3>JavaScript</h3>
+                        <pre id="codeJS"></pre>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="copyCodeBtn">העתק הכל</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="../js/types.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/modals.js"></script>
+    <script src="../js/purchase.js"></script>
+    <script src="../js/premium-effects.js"></script>
+    <script src="../js/advanced-effects.js"></script>
+    <script src="../js/performance-monitor.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/back-to-top.js"></script>
+</body>
+</html>
