@@ -6,7 +6,6 @@ interface User {
     id: string;
     username: string;
     email: string;
-    password: string;
     pointsAvailable: number;
     pointsPending: number;
     totalEarned: number;
@@ -72,7 +71,7 @@ interface ActivityLog {
     timestamp: number;
 }
 
-type ActivityType = 'register' | 'upload' | 'purchase' | 'rate' | 'approve' | 'reject' | 'buy_points';
+type ActivityType = 'login' | 'register' | 'upload' | 'purchase' | 'rate' | 'approve' | 'reject' | 'buy_points';
 
 interface AppData {
     users: User[];
@@ -86,7 +85,13 @@ interface AppData {
 // Regex patterns
 const USERNAME_REGEX: RegExp = /^[A-Za-z\u0590-\u05FF0-9 ]{2,20}$/;
 const EMAIL_REGEX: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PASSWORD_REGEX: RegExp = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$/;
+
+// Encode user-controlled text before inserting it into HTML templates.
+const escapeUserText = (value: string): string => {
+    const element: HTMLDivElement = document.createElement('div');
+    element.textContent = value;
+    return element.innerHTML;
+};
 
 // Global function declarations
 declare function showToast(message: string, type?: string): void;

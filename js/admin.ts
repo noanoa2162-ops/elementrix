@@ -129,13 +129,13 @@ document.addEventListener('DOMContentLoaded', (): void => {
             
             item.innerHTML = `
                 <div class="pending-header">
-                    <div class="pending-title">${component.name}</div>
+                    <div class="pending-title">${escapeUserText(component.name)}</div>
                     <button class="btn btn-primary btn-review" data-id="${component.id}">בדוק</button>
                 </div>
                 <div class="pending-meta">
-                    מאת: ${component.authorName} | קטגוריה: ${getCategoryName(component.category)} | מחיר: ${component.price} נקודות | תאריך: ${dateStr}
+                    מאת: ${escapeUserText(component.authorName)} | קטגוריה: ${getCategoryName(component.category)} | מחיר: ${component.price} נקודות | תאריך: ${dateStr}
                 </div>
-                <p>${component.description}</p>
+                <p>${escapeUserText(component.description)}</p>
             `;
             
             const reviewBtn = item.querySelector<HTMLButtonElement>('.btn-review')!;
@@ -200,11 +200,11 @@ document.addEventListener('DOMContentLoaded', (): void => {
         
         reviewContent.innerHTML = `
             <img src="${component.image}" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-            <h3>${component.name}</h3>
-            <p><strong>תיאור:</strong> ${component.description}</p>
+            <h3>${escapeUserText(component.name)}</h3>
+            <p><strong>תיאור:</strong> ${escapeUserText(component.description)}</p>
             <p><strong>קטגוריה:</strong> ${getCategoryName(component.category)}</p>
             <p><strong>מחיר:</strong> ${component.price} נקודות</p>
-            <p><strong>מאת:</strong> ${component.authorName}</p>
+            <p><strong>מאת:</strong> ${escapeUserText(component.authorName)}</p>
             
             <div class="code-sections">
                 <div class="code-section">
@@ -387,8 +387,8 @@ document.addEventListener('DOMContentLoaded', (): void => {
             const comp = allComponentsData[i];
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${comp.name}</td>
-                <td>${comp.authorName}</td>
+                <td>${escapeUserText(comp.name)}</td>
+                <td>${escapeUserText(comp.authorName)}</td>
                 <td>${getCategoryName(comp.category)}</td>
                 <td>${comp.price}</td>
                 <td>⭐ ${comp.rating.toFixed(1)} (${comp.ratingsCount})</td>
@@ -507,8 +507,8 @@ document.addEventListener('DOMContentLoaded', (): void => {
             const user = allUsersData[i];
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${user.username}</td>
-                <td>${user.email}</td>
+                <td>${escapeUserText(user.username)}</td>
+                <td>${escapeUserText(user.email)}</td>
                 <td>${user.pointsAvailable}</td>
                 <td>${user.pointsPending}</td>
                 <td>${user.totalEarned}</td>
@@ -578,7 +578,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
             
             item.innerHTML = `
                 <div class="activity-time">${dateStr}</div>
-                <div class="activity-desc">${activity.description}</div>
+                <div class="activity-desc">${escapeUserText(activity.description)}</div>
             `;
             
             activityLog.appendChild(item);

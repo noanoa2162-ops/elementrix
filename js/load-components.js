@@ -154,7 +154,7 @@ function createComponentCard(component) {
     const price = component.price || 50;
     card.innerHTML = `
         <div class="component-image">
-            <img src="${component.image}" alt="${component.name}" loading="lazy">
+            <img src="${component.image}" alt="${escapeUserText(component.name)}" loading="lazy">
             ${component.recommended ? '<div class="urgency-badge"><i class="fas fa-crown"></i> מומלץ</div>' : ''}
             <div class="component-overlay">
                 <button class="btn btn-sm btn-primary view-component">
@@ -165,13 +165,13 @@ function createComponentCard(component) {
         
         <div class="component-content">
             <div class="component-header">
-                <h3 class="component-title">${component.name}</h3>
+                <h3 class="component-title">${escapeUserText(component.name)}</h3>
                 <div class="component-category">
                     ${getCategoryIcon(component.category)} ${getCategoryName(component.category)}
                 </div>
             </div>
             
-            <p class="component-description">${component.description}</p>
+            <p class="component-description">${escapeUserText(component.description)}</p>
             
             <div class="component-stats">
                 <div class="stat">
@@ -226,13 +226,13 @@ function showComponentDetails(component) {
     modalBody.innerHTML = `
         <div class="component-details">
             <div class="details-header">
-                <h2>${component.name}</h2>
+                <h2>${escapeUserText(component.name)}</h2>
                 <div class="details-category">${getCategoryIcon(component.category)} ${getCategoryName(component.category)}</div>
             </div>
             
-            <img src="${component.image}" alt="${component.name}" class="details-image">
+            <img src="${component.image}" alt="${escapeUserText(component.name)}" class="details-image">
             
-            <p class="details-description">${component.description}</p>
+            <p class="details-description">${escapeUserText(component.description)}</p>
             
             <div class="details-stats">
                 <div class="stat-box">
@@ -318,9 +318,9 @@ function purchaseComponent(component) {
             content: `
             <div class="purchase-confirmation">
                 <div class="component-preview">
-                    <img src="${component.image}" alt="${component.name}">
-                    <h3>${component.name}</h3>
-                    <p>${component.description}</p>
+                    <img src="${component.image}" alt="${escapeUserText(component.name)}">
+                    <h3>${escapeUserText(component.name)}</h3>
+                    <p>${escapeUserText(component.description)}</p>
                 </div>
                 
                 <div class="purchase-details">
@@ -342,7 +342,7 @@ function purchaseComponent(component) {
                 
                 ${userPoints >= component.price ? `
                     <div class="purchase-actions">
-                        <button class="btn btn-success btn-lg" id="confirmPurchaseBtn" data-name="${component.name}" data-price="${component.price}" data-points="${userPoints}">
+                        <button class="btn btn-success btn-lg" id="confirmPurchaseBtn" data-name="${escapeUserText(component.name)}" data-price="${component.price}" data-points="${userPoints}">
                             <i class="fas fa-check"></i> אישור רכישה
                         </button>
                         <button class="btn btn-ghost" id="cancelPurchaseBtn">

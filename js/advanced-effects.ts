@@ -42,10 +42,10 @@ function showRealSocialProof(): void {
     const proofEl: HTMLDivElement = document.createElement('div');
     proofEl.className = 'social-proof';
     proofEl.innerHTML = `
-        <div class="social-proof-avatar">${activity.username.charAt(0)}</div>
+        <div class="social-proof-avatar">${escapeUserText(activity.username.charAt(0))}</div>
         <div class="social-proof-text">
-            <div class="social-proof-name">${activity.username}</div>
-            <div class="social-proof-action">${activity.description}</div>
+            <div class="social-proof-name">${escapeUserText(activity.username)}</div>
+            <div class="social-proof-action">${escapeUserText(activity.description)}</div>
             <div class="social-proof-time">${timeAgo}</div>
         </div>
         <i class="fas fa-check-circle" style="color: var(--success-color);"></i>

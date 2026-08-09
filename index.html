@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elementrix - הפלטפורמה המובילה לרכיבי קוד</title>
+    <title>Elementrix - חנות רכיבי קוד אינטראקטיבית</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/advanced-effects.css">
     <link rel="stylesheet" href="css/no-loader.css">
@@ -23,52 +23,47 @@
     <div class="auth-container">
         <div class="auth-card">
             <h1 class="logo">Elementrix</h1>
-            <p class="tagline">הפלטפורמה המובילה לרכיבי קוד מקצועיים</p>
+            <p class="tagline">אב-טיפוס אינטראקטיבי לחנות רכיבי קוד</p>
             
             <!-- 🎮 Gamification Banner -->
             <div class="auth-stats gamification-banner">
                 <div class="stat-item animate-on-hover">
                     <i class="fas fa-code-branch pulse-icon"></i>
                     <div>
-                        <strong class="counter" data-target="1200">1200</strong><strong>+</strong>
-                        <span> רכיבי קוד</span>
+                        <strong class="counter" data-target="60">60</strong>
+                        <span> רכיבי דמו</span>
                     </div>
                 </div>
                 <div class="stat-item animate-on-hover">
                     <i class="fas fa-users pulse-icon"></i>
                     <div>
-                        <strong class="counter" data-target="500">500</strong><strong>+</strong>
-                        <span> מפתחים</span>
+                        <strong>Local</strong>
+                        <span> שמירה בדפדפן</span>
                     </div>
                 </div>
                 <div class="stat-item animate-on-hover">
                     <i class="fas fa-star pulse-icon"></i>
                     <div>
-                        <strong class="counter" data-target="4.9">4.9</strong><strong>/5</strong>
-                        <span> דירוג</span>
+                        <strong>TypeScript</strong>
+                        <span> לוגיקה מוקלדת</span>
                     </div>
                 </div>
             </div>
             
             <div class="tabs">
-                <button class="tab-btn active" id="loginTab">כניסה</button>
-                <button class="tab-btn" id="registerTab">הרשמה</button>
+                <button class="tab-btn active" id="loginTab">בחירת פרופיל דמו</button>
+                <button class="tab-btn" id="registerTab">פרופיל חדש</button>
             </div>
 
             <form id="loginForm" class="auth-form">
                 <div class="form-group">
-                    <label for="loginUsername">שם משתמש או אימייל</label>
-                    <input type="text" id="loginUsername" name="username" required>
+                    <label for="loginUsername">שם פרופיל או אימייל</label>
+                    <input type="text" id="loginUsername" name="username" placeholder="לדוגמה: demo-admin" required>
                     <span class="error-msg" id="loginUsernameError"></span>
+                    <span class="hint">זהו דמו מקומי ללא מערכת אימות. לפרופיל הניהול: demo-admin</span>
                 </div>
                 
-                <div class="form-group">
-                    <label for="loginPassword">סיסמה</label>
-                    <input type="password" id="loginPassword" name="password" required>
-                    <span class="error-msg" id="loginPasswordError"></span>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">כניסה</button>
+                <button type="submit" class="btn btn-primary">המשך לדמו</button>
             </form>
 
             <form id="registerForm" class="auth-form hidden">
@@ -85,30 +80,19 @@
                     <span class="error-msg" id="registerEmailError"></span>
                 </div>
                 
-                <div class="form-group">
-                    <label for="registerPassword">סיסמה</label>
-                    <input type="password" id="registerPassword" name="password" required>
-                    <span class="error-msg" id="registerPasswordError"></span>
-                    <span class="hint">לפחות 8 תווים, אות גדולה, אות קטנה, מספר ותו מיוחד</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="registerPasswordConfirm">אימות סיסמה</label>
-                    <input type="password" id="registerPasswordConfirm" name="passwordConfirm" required>
-                    <span class="error-msg" id="registerPasswordConfirmError"></span>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">הרשמה</button>
+                <span class="hint">הפרופיל נשמר רק ב־LocalStorage של הדפדפן ואינו חשבון אמיתי.</span>
+
+                <button type="submit" class="btn btn-primary">יצירת פרופיל דמו</button>
             </form>
         </div>
         
         <!-- Footer -->
         <div class="auth-footer">
-            <p>© 2024 חנות רכיבי קוד - כל הזכויות שמורות</p>
+            <p>© 2025–2026 Elementrix — פרויקט פורטפוליו</p>
             <div class="footer-links">
-                <a href="#"><i class="fas fa-shield-alt"></i> מדיניות פרטיות</a>
-                <a href="#"><i class="fas fa-file-contract"></i> תנאי שימוש</a>
-                <a href="#"><i class="fas fa-envelope"></i> צור קשר</a>
+                <a href="pages/privacy.html"><i class="fas fa-shield-alt"></i> מדיניות פרטיות</a>
+                <a href="pages/terms.html"><i class="fas fa-file-contract"></i> תנאי שימוש</a>
+                <a href="pages/contact.html"><i class="fas fa-envelope"></i> צור קשר</a>
             </div>
         </div>
     </div>

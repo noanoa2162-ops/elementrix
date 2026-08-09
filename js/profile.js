@@ -126,11 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             item.innerHTML = `
             <div class="component-item-info">
-                <div class="component-item-title">${component.name}</div>
+                <div class="component-item-title">${escapeUserText(component.name)}</div>
                 <div class="component-item-meta">
                     ${metaInfo}
                 </div>
-                ${component.rejectedReason ? `<p style="color: var(--danger-color); margin-top: 0.5rem;">סיבה: ${component.rejectedReason}</p>` : ''}
+                ${component.rejectedReason ? `<p style="color: var(--danger-color); margin-top: 0.5rem;">סיבה: ${escapeUserText(component.rejectedReason)}</p>` : ''}
             </div>
             <div class="component-item-actions">
                 ${actions}
@@ -202,9 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const dateStr = date.toLocaleDateString('he-IL');
             item.innerHTML = `
             <div class="component-item-info">
-                <div class="component-item-title">${component.name}</div>
+                <div class="component-item-title">${escapeUserText(component.name)}</div>
                 <div class="component-item-meta">
-                    <span>מאת: ${component.authorName}</span>
+                    <span>מאת: ${escapeUserText(component.authorName)}</span>
                     <span>תאריך: ${dateStr}</span>
                     <span>💰 ${purchase.price} נקודות</span>
                 </div>

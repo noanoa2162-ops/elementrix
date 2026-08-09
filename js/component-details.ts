@@ -77,8 +77,8 @@ if (!component) {
         <!-- 🎨 HERO SECTION - MATERIAL DESIGN -->
         <div class="hero-section">
             <div class="container hero-content">
-                <h1 class="component-title">${component.name}</h1>
-                <p class="component-description">${component.description}</p>
+                <h1 class="component-title">${escapeUserText(component.name)}</h1>
+                <p class="component-description">${escapeUserText(component.description)}</p>
                 
                 <div class="stats-grid">
                     <div class="stat-card" style="--delay: 0s;">
@@ -127,7 +127,7 @@ if (!component) {
                     תצוגה מקדימה
                 </h2>
                 <div class="preview-wrapper">
-                    <img src="${component.image}" alt="${component.name}" class="preview-image">
+                    <img src="${component.image}" alt="${escapeUserText(component.name)}" class="preview-image">
                 </div>
             </div>
         </div>

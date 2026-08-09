@@ -131,15 +131,15 @@ document.addEventListener('DOMContentLoaded', (): void => {
             
             card.innerHTML = `
                 <div class="component-image">
-                    <img src="${component.image}" alt="${component.name}">
+                    <img src="${component.image}" alt="${escapeUserText(component.name)}">
                     ${component.recommended ? '<div class="urgency-badge"><i class="fas fa-crown"></i> מומלץ</div>' : ''}
                 </div>
                 <div class="component-content">
                     <div class="component-header">
-                        <h3 class="component-title">${component.name}</h3>
+                        <h3 class="component-title">${escapeUserText(component.name)}</h3>
                         <div class="component-category">${getCategoryName(component.category)}</div>
                     </div>
-                    <p class="component-description">${component.description}</p>
+                    <p class="component-description">${escapeUserText(component.description)}</p>
                     <div class="component-footer">
                         <div class="component-stats">
                             <span class="stat">⭐ ${component.rating.toFixed(1)}</span>
@@ -210,8 +210,8 @@ document.addEventListener('DOMContentLoaded', (): void => {
                 <!-- Header -->
                 <div style="background: #2d2d30; padding: 20px 32px; border-bottom: 1px solid #3e3e42; display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <h2 style="font-size: 24px; font-weight: 600; color: #ffffff; margin: 0 0 8px 0;">${component.name}</h2>
-                        <p style="font-size: 14px; color: #cccccc; margin: 0;">${component.description}</p>
+                        <h2 style="font-size: 24px; font-weight: 600; color: #ffffff; margin: 0 0 8px 0;">${escapeUserText(component.name)}</h2>
+                        <p style="font-size: 14px; color: #cccccc; margin: 0;">${escapeUserText(component.description)}</p>
                     </div>
                     <div style="display: flex; gap: 16px; align-items: center;">
                         <div style="text-align: center;">
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
                 
                 <!-- Preview -->
                 <div style="background: #252526; padding: 24px; border-bottom: 1px solid #3e3e42;">
-                    <img src="${component.image}" alt="${component.name}" style="width: 100%; max-height: 280px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.4);">
+                    <img src="${component.image}" alt="${escapeUserText(component.name)}" style="width: 100%; max-height: 280px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.4);">
                 </div>
             
             ${!hasPurchased && !isOwner && !isAdmin ? `

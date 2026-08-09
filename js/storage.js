@@ -4,7 +4,8 @@
 // ========================================
 const STORAGE_KEY = 'codeComponentsStore';
 const CURRENT_USER_KEY = 'currentUser';
-const STORAGE_VERSION = 'v2.0'; // Version for forcing data refresh
+// v3 removes legacy plaintext passwords from the local demo data.
+const STORAGE_VERSION = 'v3.0';
 class AppStorageManager {
     constructor() {
         this.data = this.loadData();
@@ -34,13 +35,12 @@ class AppStorageManager {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(this.data));
     }
     initializeDefaultData() {
-        // Create admin user if doesn't exist
+        // Create a local demo administrator profile if one does not exist.
         if (!this.data.users.find((u) => u.isAdmin)) {
             const admin = {
                 id: this.generateId(),
-                username: 'admin',
-                email: 'admin@store.com',
-                password: 'Admin123!',
+                username: 'demo-admin',
+                email: 'admin@elementrix.demo',
                 pointsAvailable: 999999,
                 pointsPending: 0,
                 totalEarned: 0,
