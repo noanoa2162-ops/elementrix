@@ -1,0 +1,17 @@
+{
+  "name": "elementrix",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A browser-based code component marketplace prototype built with TypeScript.",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

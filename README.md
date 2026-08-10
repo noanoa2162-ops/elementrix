@@ -1,318 +1,80 @@
-# 🎨 Elementrix - חנות רכיבי קוד מקצועית
+# Elementrix
 
-<div align="center">
+[![CI](https://github.com/noanoa2162-ops/elementrix/actions/workflows/ci.yml/badge.svg)](https://github.com/noanoa2162-ops/elementrix/actions/workflows/ci.yml)
 
-![TypeScript](https://img.shields.io/badge/TypeScript-100%25-3178C6?style=for-the-badge&logo=typescript)
-![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?style=for-the-badge&logo=html5)
-![CSS3](https://img.shields.io/badge/CSS3-Responsive-1572B6?style=for-the-badge&logo=css3)
-![Score](https://img.shields.io/badge/Score-100%2F100-success?style=for-the-badge)
+Elementrix is a responsive, RTL **frontend prototype** for discovering, sharing, reviewing, and purchasing reusable UI components with virtual points. It demonstrates a multi-page TypeScript application with a catalog, role-based demo flows, moderation, and browser-side persistence.
 
-</div>
+## Highlights
 
-## 📋 תיאור הפרויקט
+- Searchable and filterable catalog with 60 sample components
+- Component detail pages with syntax-highlighted HTML, CSS, and JavaScript
+- Local upload, review, rating, and virtual-purchase workflows
+- User and administrator demo experiences
+- Responsive Hebrew RTL interface with reusable CSS modules
+- Strict TypeScript configuration and committed browser builds
+- Automated security/documentation checks and GitHub Actions CI
 
-**Elementrix** היא פלטפורמה מקצועית ומלאה למפתחים, המאפשרת:
-- 🛍️ **גלישה ורכישת רכיבי קוד** - כפתורים, טפסים, תפריטים, אנימציות ועוד
-- 📤 **העלאת רכיבים משלך** - שיתוף קוד עם הקהילה
-- 💎 **מערכת נקודות חכמה** - הרוויחו נקודות והשתמשו בהן לרכישות
-- ⭐ **דירוגים והמלצות** - מערכת review מלאה
-- 👨‍💼 **ממשק מנהל** - אישור רכיבים וניהול משתמשים
+## Demo model
 
-### 🎯 ייחודיות הפרויקט
-- **100% TypeScript** - ללא `any`, עם טיפוסים מלאים
-- **עיצוב פרימיום** - גרדיאנט אדום-זהב (#C8102E → #D4AF37)
-- **Separation of Concerns** - HTML/CSS/TS מופרדים לחלוטין
-- **Responsive מלא** - Mobile-first design
-- **RTL תמיכה** - ממשק בעברית מושלם
+This repository is intentionally a client-side portfolio project. It has no backend, real authentication, payment processing, or multi-user synchronization.
 
-## 🎯 תכונות עיקריות
+- Profiles and activity are stored only in the browser's `localStorage`.
+- Passwords are neither requested nor stored.
+- Enter `demo-admin` on the opening screen to explore the administrator workflow.
+- New local demo profiles receive virtual points for exercising the marketplace flow.
+- Clearing site data resets the local demo.
 
-### צד משתמש
-- ✅ הרשמה וכניסה עם Regex validation מלא
-- ✅ גלישה וחיפוש רכיבים עם סינון ומיון
-- ✅ העלאת רכיבי קוד חדשים
-- ✅ מערכת נקודות (זמינות + ממתינות)
-- ✅ רכישת רכיבים בנקודות
-- ✅ רכישת נקודות נוספות בכסף (מדומה)
-- ✅ מערכת דירוגים (1-5 כוכבים)
-- ✅ פרופיל אישי עם היסטוריה מלאה
-- ✅ צפייה בקוד של רכיבים שנרכשו
+Do not enter sensitive or real personal information.
 
-### צד מנהל
-- ✅ ממשק ניהול מתקדם
-- ✅ אישור/דחיית רכיבים חדשים
-- ✅ צפייה בכל המשתמשים והרכיבים
-- ✅ לוג פעילות אחרונה
-- ✅ סטטיסטיקות כלליות
+## Run locally
 
-## 🛠️ טכנולוגיות
-
-- **HTML5** - מבנה נקי ללא style או לוגיקה
-- **CSS3** - עיצוב מודרני ורספונסיבי, כל הסטיילינג בקובץ אחד
-- **TypeScript** - לוגיקה מלאה ללא שימוש ב-`any`
-- **LocalStorage** - שמירת נתונים מקומית
-
-## 📁 מבנה הפרויקט
-
-```
-code-components-store/
-├── index.html                    # 🏠 דף כניסה/הרשמה
-├── CLEAR_CACHE.html             # 🧹 ניקוי cache
-├── README.md                     # 📖 קובץ זה
-│
-├── css/                          # 🎨 עיצוב
-│   ├── style.css                 # סגנון ראשי + טופס הרשמה
-│   ├── main.css                  # בסיס + משתנים
-│   ├── component-details.css    # דף פרטי רכיב
-│   ├── components-grid.css      # גריד רכיבים
-│   ├── modals.css                # חלונות קופצים
-│   ├── footer.css                # פוטר
-│   ├── info-pages.css            # עמודי מידע
-│   ├── mega-hero.css             # Hero section
-│   ├── advanced-effects.css      # אפקטים
-│   ├── expandable-navbar.css     # תפריט ניווט
-│   └── ... (עוד קבצי CSS)
-│
-├── js/                           # 💻 לוגיקה (TypeScript)
-│   ├── types.ts                  # טיפוסים ו-Interfaces
-│   ├── storage.ts                # ניהול LocalStorage
-│   ├── auth.ts                   # התחברות/הרשמה
-│   ├── components.ts             # לוגיקת רכיבים
-│   ├── store.ts                  # חנות
-│   ├── load-components.ts        # טעינת רכיבים
-│   ├── upload.ts                 # העלאת רכיבים
-│   ├── profile.ts                # פרופיל משתמש
-│   ├── admin.ts                  # ממשק מנהל
-│   ├── component-details.ts      # פרטי רכיב
-│   ├── modals.ts                 # חלונות
-│   ├── purchase.ts               # רכישות
-│   ├── performance-monitor.ts    # ביצועים
-│   ├── premium-effects.ts        # אפקטים
-│   ├── advanced-effects.ts       # אפקטים מתקדמים
-│   ├── store-interactions.ts     # אינטראקציות
-│   ├── back-to-top.ts           # כפתור למעלה
-│   └── footer.js                 # פוטר ניוזלטר
-│
-├── pages/                        # 📄 דפים
-│   ├── store.html                # חנות רכיבים
-│   ├── component-details.html    # פרטי רכיב
-│   ├── upload.html               # העלאת רכיב
-│   ├── profile.html              # פרופיל משתמש
-│   ├── admin.html                # פאנל מנהל
-│   ├── help.html                 # מרכז עזרה
-│   ├── contact.html              # צור קשר
-│   ├── terms.html                # תנאי שימוש
-│   └── privacy.html              # מדיניות פרטיות
-│
-└── data/                         # 📊 נתונים
-    └── full-60-components.json   # 60 רכיבים לדוגמה
-```
-
-## 🚀 איך להריץ את הפרויקט
-
-### הפרויקט מוכן לשימוש!
-
-הפרויקט כולל:
-- ✅ קבצי TypeScript (.ts) - עם טיפוסים מלאים ללא `any`
-- ✅ קבצי JavaScript (.js) - קוד מקומפל שרץ בדפדפן
-
-**פשוט פתחי את `index.html` בדפדפן!**
-
-#### אופציות להרצה:
-
-**אופציה 1: פתיחה ישירה**
-- לחצי פעמיים על `index.html`
-- או גררי אותו לדפדפן
-
-**אופציה 2: Live Server (מומלץ)**
 ```bash
-# אם יש לך Live Server extension ב-VSCode
-# לחצי ימין על index.html ובחרי "Open with Live Server"
-```
-
-**אופציה 3: Python Server**
-```bash
-cd code-components-store
+npm ci
+npm run typecheck
+npm test
+npm run build
 python -m http.server 8000
-# פתחי: http://localhost:8000
 ```
 
-## 👤 כניסה למערכת
+Then open <http://localhost:8000>. A local web server is recommended so every page and asset is loaded consistently.
 
-### משתמש רגיל
-הירשמי דרך טופס ההרשמה (תקבלי 50 נקודות בונוס!)
+## Quality checks
 
-### מנהל
-- **שם משתמש:** admin
-- **סיסמה:** Admin123!
-- **URL:** `pages/admin.html`
-
-## ✅ דרישות הפרויקט שהוכנסו
-
-### TypeScript נקי (15 נק')
-- ✅ אין שימוש ב-`any` כלל
-- ✅ טיפוסים מפורשים לכל משתנה, פרמטר ופונקציה
-- ✅ שימוש ב-interfaces מורכבים
-
-### קוד מודולרי (10 נק')
-- ✅ קוד מפוצל לקבצים לוגיים
-- ✅ פונקציות קטנות וברורות
-- ✅ ללא כפילויות (DRY)
-
-### טפסים + Regex (15 נק')
-- ✅ טופס הרשמה/כניסה
-- ✅ טופס העלאת רכיב
-- ✅ טופס רכישת נקודות
-- ✅ Regex validation: שם משתמש, אימייל, סיסמה, URL, מחיר
-- ✅ validation בזמן אמת
-
-### LocalStorage (15 נק')
-- ✅ שמירת משתמשים, רכיבים, רכישות, דירוגים
-- ✅ המשכיות מלאה אחרי רענון
-- ✅ מחלקת StorageManager מקצועית
-
-### לוגיקה רשימות (15 נק')
-- ✅ חיפוש רכיבים בזמן אמת
-- ✅ סינון לפי קטגוריה
-- ✅ מיון: חדשים, פופולריים, מדורגים, זולים
-- ✅ חישוב דירוג ממוצע
-- ✅ ספירת רכישות
-
-### טיימרים (10 נק')
-- ✅ `setTimeout` - הודעות toast (3 שניות), הפניה לדפים, הודעות עיכוב
-- ✅ `setInterval` - רענון אוטומטי של רכיבים פופולריים (10 שניות)
-- ✅ `setInterval` - רענון סטטיסטיקות מנהל (5 שניות)
-- ✅ ניקוי intervals עם `clearInterval` ו-`beforeunload`
-
-### UI + RTL (10 נק')
-- ✅ עיצוב מודרני וצבעוני
-- ✅ RTL מלא (עברית)
-- ✅ רספונסיבי לכל המסכים
-- ✅ אנימציות ו-transitions
-- ✅ נגישות: labels, aria
-
-### אבטחה (5 נק')
-- ✅ בדיקת הרשאות (רגיל/מנהל)
-- ✅ הפניה אוטומטית אם לא מחובר
-- ✅ אימות קלט מלא
-
-### בהירות (5 נק')
-- ✅ קוד נקי וברור
-- ✅ שמות משתנים משמעותיים
-- ✅ הערות בראש כל קובץ
-- ✅ חוויית משתמש חלקה
-
-## 🎨 תכונות UI/UX
-
-### עיצוב מקצועי
-- 🎨 **פלטת צבעים:** גרדיאנט אדום-זהב (#C8102E → #D4AF37)
-- ✨ **אנימציות:** fadeIn, slideIn, pulse, float, bounce
-- 📱 **Responsive:** Mobile-first, תמיכה מלאה בטאבלט ומובייל
-- 🌙 **RTL:** ממשק בעברית עם כיוון ימין לשמאל
-
-### אינטראקציות
-- 💬 **Toast notifications** - הודעות הצלחה/שגיאה
-- 🔔 **Modal dialogs** - חלונות קופצים מעוצבים
-- ⭐ **Star ratings** - דירוג אינטראקטיבי
-- 🔍 **Live search** - חיפוש בזמן אמת
-- 📊 **Progress bars** - אינדיקטורים מתקדמים
-
-### תכונות מתקדמות
-- 💎 **Pending points** - נקודות ממתינות לאישור
-- 📜 **Activity history** - היסטוריית פעילות מלאה
-- 🎯 **Smart filters** - סינון חכם לפי קטגוריה ומחיר
-- 🔄 **Auto-refresh** - רענון אוטומטי של תוכן
-- 📈 **Analytics** - מעקב ביצועים
-
-## 📝 הערות חשובות
-
-### 1️⃣ הפרדת קוד מושלמת (Separation of Concerns)
-```
-HTML  → מבנה בלבד (תגיות, תוכן)
-CSS   → עיצוב בלבד (צבעים, layout, אנימציות)
-TS/JS → לוגיקה בלבד (פונקציות, events, validation)
-```
-
-### 2️⃣ מערכת נקודות
-| פעולה | נקודות |
-|-------|---------|
-| 🎉 הרשמה חדשה | **50** בונוס |
-| 📤 העלאת רכיב | **100** (ממתינות לאישור) |
-| 💰 רכישת חבילה | 100 / 500 / 1000 |
-
-### 3️⃣ תזרים אישור רכיבים
-```
-משתמש מעלה רכיב
-    ↓
-מנהל רואה בפאנל
-    ↓
-מאשר ✅ → נקודות זמינות
-    או
-דוחה ❌ → נקודות נמחקות
-```
-
-## 🐛 פתרון בעיות נפוצות
-
-### ❓ הקוד לא רץ?
-וודאי שהרצת `tsc` לקומפילציה של TypeScript:
 ```bash
-tsc
+npm run typecheck  # strict TypeScript validation
+npm run build      # regenerate browser JavaScript
+npm test           # Node-based security and repository checks
 ```
 
-### ❓ אין נתונים במערכת?
-המערכת יוצרת אוטומטית:
-- ✅ משתמש admin
-- ✅ 60 רכיבים לדוגמה
-- ✅ מבנה LocalStorage
+CI runs all three checks and verifies that the generated JavaScript matches the committed TypeScript source. User-controlled names and descriptions are encoded before insertion into HTML templates.
 
-### ❓ שגיאות TypeScript?
-התקן TypeScript גלובלית:
-```bash
-npm install -g typescript
+## Project structure
+
+```text
+elementrix/
+├── index.html              # Local demo profile selection
+├── pages/                  # Store, component, upload, profile, and admin views
+├── js/                     # TypeScript source and generated browser JavaScript
+├── css/                    # Responsive layout and visual modules
+├── data/                   # Sample component catalog
+├── tests/                  # Repository and safety checks
+└── .github/workflows/      # Continuous integration
 ```
 
-## 📸 תצוגה מקדימה
+## Technical decisions
 
-### דפים עיקריים
-- 🏠 **דף הרשמה** - טופס עם validation מלא ואנימציות
-- 🛍️ **חנות רכיבים** - גריד רספונסיבי עם חיפוש וסינון
-- 📄 **פרטי רכיב** - תצוגה מקדימה, קוד, דירוגים
-- 📤 **העלאת רכיב** - טופס מפורט עם validation
-- 👤 **פרופיל משתמש** - היסטוריה, נקודות, רכישות
-- 👨‍💼 **פאנל מנהל** - אישור רכיבים, ניהול משתמשים
+- **TypeScript without a framework:** keeps the project focused on DOM, state, and browser API fundamentals.
+- **LocalStorage adapter:** provides persistent demo state without pretending that a backend exists.
+- **Generated JavaScript committed:** lets the static site run without a deployment build step; CI prevents source/build drift.
+- **Explicit prototype boundaries:** administrator roles and purchases are interaction simulations, not security or commerce features.
 
-### עמודי מידע
-- ❓ **מרכז עזרה** - FAQ אינטראקטיבי
-- 📧 **צור קשר** - טופס יצירת קשר
-- 📜 **תנאי שימוש** - מדיניות השימוש
-- 🔒 **מדיניות פרטיות** - הגנת פרטיות
+## Project history
 
-## 🎓 פרויקט סיום קורס TypeScript
+Originally developed in **November 2025** as a TypeScript course project by Noa Binet. Portfolio hardening in **August 2026** added CI, automated checks, safer HTML rendering, honest demo-profile semantics, and English documentation while preserving the original application and commit.
 
-**Elementrix** - חנות רכיבי קוד מקצועית ומלאה  
-נבנה ב-**TypeScript טהור** עם עיצוב **responsive** ומערכת ניהול מתקדמת
+## Known limitations
 
-### 📊 סטטיסטיקות הפרויקט
-- **11 דפי HTML** - מבנה סמנטי מלא
-- **21 קובצי CSS** - עיצוב מודולרי
-- **18 קובצי TypeScript** - לוגיקה מפוצלת
-- **60 רכיבים** - דוגמאות מובנות
-- **0 שימוש ב-any** - טיפוסים מלאים
-
----
-
-<div align="center">
-
-### 💯 ציון מושלם: 100/100
-
-**Built with 💖 using TypeScript**
-
-🎨 Design | 💻 Code | 🚀 Deploy
-
-© 2025 Noa Binet — Project released under the MIT License.
-
-> 🧩 הערה: הפרויקט פועל במלואו וכולל עקרונות רספונסיביות.  
-> שיפורי התאמה נוספים למכשירים קטנים מתוכננים בהמשך.
-
-
-</div>
+- State is browser-local and is not shared between devices.
+- Uploaded snippets are catalog content; this project does not provide a sandbox for executing untrusted code.
+- The demo administrator role is a UI workflow, not an authorization boundary.
+- External icon and syntax-highlighting assets require network access unless vendored locally.
